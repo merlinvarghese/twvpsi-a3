@@ -14,7 +14,7 @@ public class Product {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @JsonProperty
-  private String id;
+  private Long id;
 
   @JsonProperty
   private String name;
@@ -25,7 +25,7 @@ public class Product {
   public Product() {
   }
 
-  public Product(String id, String name, String type) {
+  public Product(Long id, String name, String type) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -42,5 +42,9 @@ public class Product {
   @Override
   public int hashCode() {
     return Objects.hash(id);
+  }
+
+  public Long getId() {
+    return id;
   }
 }
