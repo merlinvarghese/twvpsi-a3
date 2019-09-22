@@ -1,5 +1,6 @@
 package com.example.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
@@ -31,6 +32,18 @@ public class Product {
     this.type = type;
   }
 
+  public Long getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getType() {
+    return type;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -44,7 +57,8 @@ public class Product {
     return Objects.hash(id);
   }
 
-  public Long getId() {
-    return id;
+  @Override
+  public String toString() {
+    return new String("Name : " + name + ", Type : " + type);
   }
 }
